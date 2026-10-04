@@ -1,0 +1,68 @@
+# ============================================================
+# Employee Data Quality & ETL Pipeline
+# Day 01 – Python for Data Engineering
+# ============================================================
+import json
+import csv
+
+total_records = 0
+valid_records = 0
+invalid_records = 0
+active_employees = 0
+high_salary_employees = 0
+selected_employees = 0
+
+with open("employee_raw_data.json") as file:
+    data = json.load(file)
+
+    with open("cleaned_employees.csv", "w", newline="") as output_file:
+        columns = [
+            "employee_id",
+            "name",
+            "department",
+            "city",
+            "salary",
+            "status"
+        ]
+
+        writer = csv.DictWriter(output_file, fieldnames=columns)
+        writer.writeheader()
+
+        for employee in data:
+
+            total_records += 1
+
+            if employee["status"] == "Active":
+                active_employees += 1
+
+            try:
+                salary = int(employee["salary"])
+                valid_records += 1
+
+            except (ValueError, TypeError):
+                invalid_records += 1
+                continue
+
+            if salary > 50000:
+                high_salary_employees += 1
+
+            if salary > 50000 and employee["status"] == "Active":
+                selected_employees += 1
+
+                writer.writerow({
+                    "employee_id": employee["employee_id"],
+                    "name": employee["name"],
+                    "department": employee["department"],
+                    "city": employee["city"],
+                    "salary": salary,
+                    "status": employee["status"]
+                })
+
+print("ETL Processing Complete")
+print("-----------------------")
+print("Total records       :", total_records)
+print("Valid records       :", valid_records)
+print("Invalid records     :", invalid_records)
+print("Active employees    :", active_employees)
+print("High salary         :", high_salary_employees)
+print("Selected employees  :", selected_employees)
