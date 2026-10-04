@@ -1,0 +1,162 @@
+[
+    {
+        "employee_id": 1001,
+        "name": "Arun Kumar",
+        "department": "Engineering",
+        "city": "Chennai",
+        "salary": 62000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1002,
+        "name": "Priya Nair",
+        "department": "Finance",
+        "city": "Bengaluru",
+        "salary": "58000",
+        "status": "Active"
+    },
+    {
+        "employee_id": 1003,
+        "name": "Rahul Menon",
+        "department": "Engineering",
+        "city": "Coimbatore",
+        "salary": "N/A",
+        "status": "Active"
+    },
+    {
+        "employee_id": 1004,
+        "name": "Sneha Iyer",
+        "department": "HR",
+        "city": "Chennai",
+        "salary": 48000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1005,
+        "name": "Vikram Singh",
+        "department": "Engineering",
+        "city": "Hyderabad",
+        "salary": null,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1006,
+        "name": "Divya Raj",
+        "department": "Sales",
+        "city": "Pune",
+        "salary": 67000,
+        "status": "Inactive"
+    },
+    {
+        "employee_id": 1007,
+        "name": "Karthik Rao",
+        "department": "Finance",
+        "city": "Chennai",
+        "salary": 53000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1008,
+        "name": "Anjali Das",
+        "department": "Engineering",
+        "city": "Bengaluru",
+        "salary": "72000",
+        "status": "Active"
+    },
+    {
+        "employee_id": 1009,
+        "name": "Suresh Babu",
+        "department": "Operations",
+        "city": "Chennai",
+        "salary": "invalid",
+        "status": "Active"
+    },
+    {
+        "employee_id": 1010,
+        "name": "Meera Krishnan",
+        "department": "HR",
+        "city": "Madurai",
+        "salary": 61000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1011,
+        "name": "Aditya Shah",
+        "department": "Sales",
+        "city": "Mumbai",
+        "salary": 75000,
+        "status": "Inactive"
+    },
+    {
+        "employee_id": 1012,
+        "name": "Nithya Kumar",
+        "department": "Engineering",
+        "city": "Chennai",
+        "salary": 51000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1013,
+        "name": "Rohan Patel",
+        "department": "Operations",
+        "city": "Pune",
+        "salary": 49000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1014,
+        "name": "Lakshmi Devi",
+        "department": "Finance",
+        "city": "Hyderabad",
+        "salary": "64000",
+        "status": "Active"
+    },
+    {
+        "employee_id": 1015,
+        "name": "Manoj Kumar",
+        "department": "Engineering",
+        "city": "Coimbatore",
+        "salary": "N/A",
+        "status": "Inactive"
+    },
+    {
+        "employee_id": 1016,
+        "name": "Asha Thomas",
+        "department": "Sales",
+        "city": "Chennai",
+        "salary": 56000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1017,
+        "name": "Deepak Verma",
+        "department": "Operations",
+        "city": "Bengaluru",
+        "salary": 59000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1018,
+        "name": "Harini S",
+        "department": "Engineering",
+        "city": "Madurai",
+        "salary": null,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1019,
+        "name": "Ajay Mohan",
+        "department": "Finance",
+        "city": "Chennai",
+        "salary": 47000,
+        "status": "Active"
+    },
+    {
+        "employee_id": 1020,
+        "name": "Keerthana V",
+        "department": "HR",
+        "city": "Bengaluru",
+        "salary": 52000,
+        "status": "Inactive"
+    }
+]
