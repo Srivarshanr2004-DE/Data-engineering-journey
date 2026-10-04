@@ -1,0 +1,10 @@
+employee_id,name,department,city,salary,status
+1001,Arun Kumar,Engineering,Chennai,62000,Active
+1002,Priya Nair,Finance,Bengaluru,58000,Active
+1007,Karthik Rao,Finance,Chennai,53000,Active
+1008,Anjali Das,Engineering,Bengaluru,72000,Active
+1010,Meera Krishnan,HR,Madurai,61000,Active
+1012,Nithya Kumar,Engineering,Chennai,51000,Active
+1014,Lakshmi Devi,Finance,Hyderabad,64000,Active
+1016,Asha Thomas,Sales,Chennai,56000,Active
+1017,Deepak Verma,Operations,Bengaluru,59000,Active
