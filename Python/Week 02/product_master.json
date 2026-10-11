@@ -1,0 +1,65 @@
+[
+    {
+        "product_id": "P001",
+        "product_name": "Wireless Mouse",
+        "category": " electronics ",
+        "current_stock": 45,
+        "min_stock": 10
+    },
+    {
+        "product_id": "P002",
+        "product_name": "Mechanical Keyboard",
+        "category": "ELECTRONICS",
+        "current_stock": 5,
+        "min_stock": 15
+    },
+    {
+        "product_id": "P003",
+        "product_name": "Ergonomic Chair",
+        "category": " office supplies",
+        "current_stock": 2,
+        "min_stock": 5
+    },
+    {
+        "product_id": "P004",
+        "product_name": "Desk Lamp",
+        "category": "OFFICE SUPPLIES ",
+        "current_stock": 30,
+        "min_stock": 10
+    },
+    {
+        "product_id": "P005",
+        "product_name": "USB-C Hub",
+        "category": " electronics ",
+        "current_stock": 8,
+        "min_stock": 20
+    },
+    {
+        "product_id": "P006",
+        "product_name": "Standing Desk",
+        "category": "Furniture",
+        "current_stock": 12,
+        "min_stock": 5
+    },
+    {
+        "product_id": "P007",
+        "product_name": "Notebook",
+        "category": " office supplies ",
+        "current_stock": 150,
+        "min_stock": 50
+    },
+    {
+        "product_id": "P008",
+        "product_name": "Water Bottle",
+        "category": "accessories",
+        "current_stock": 4,
+        "min_stock": 15
+    },
+    {
+        "product_id": "P009",
+        "product_name": "Webcam",
+        "category": "ELECTRONICS",
+        "current_stock": 25,
+        "min_stock": 10
+    }
+]
