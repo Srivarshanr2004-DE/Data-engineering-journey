@@ -1,41 +1,44 @@
 import pandas as pd
-import os
 
-def run_etl():
-    os.makedirs('data/processed', exist_ok=True)
+# Load the raw data
+sales = pd.read_csv('data/raw/raw_sales.csv')
+inventory = pd.read_json('data/raw/product_master.json')
 
-    # 1. EXTRACT
-    print("Extracting data...")
-    sales_df = pd.read_csv('data/raw/raw_sales.csv')
-    inventory_df = pd.read_json('data/raw/product_master.json')
-    
-    # 2. TRANSFORM - CLEANING SALES
-    print("Cleaning sales data...")
-    sales_df = sales_df.drop_duplicates()
-    sales_df['customer_id'] = sales_df['customer_id'].fillna('GUEST')
-    sales_df = sales_df.dropna(subset=['quantity'])
-    sales_df = sales_df[sales_df['quantity'] >= 1]
-    sales_df['transaction_date'] = pd.to_datetime(sales_df['transaction_date'])
-    
-    # 3. TRANSFORM - CLEANING INVENTORY
-    print("Cleaning inventory data...")
-    inventory_df['category'] = inventory_df['category'].str.strip().str.title()
-    
-    # 4. TRANSFORM - MERGING & ENRICHING
-    print("Merging dataframes...")
-    merged_df = pd.merge(sales_df, inventory_df, on='product_id', how='inner')
-    merged_df['total_revenue'] = merged_df['quantity'] * merged_df['price']
-    
-    # 5. AGGREGATE
-    print("Aggregating metrics...")
-    daily_revenue = merged_df.groupby(['transaction_date', 'category'])['total_revenue'].sum().reset_index()
-    low_stock_alerts = inventory_df[inventory_df['current_stock'] < inventory_df['min_stock']]
-    
-    # 6. LOAD
-    print("Loading processed data...")
-    daily_revenue.to_csv('data/processed/daily_revenue.csv', index=False)
-    low_stock_alerts.to_csv('data/processed/low_stock_alerts.csv', index=False)
-    print("ETL complete!")
+# --- Clean Sales Data ---
+# Remove any accidental duplicate rows
+sales = sales.drop_duplicates()
 
-if __name__ == "__main__":
-    run_etl()
+# Fill missing customers with a default value
+sales['customer_id'] = sales['customer_id'].fillna('GUEST')
+
+# Keep only valid quantities (drop nulls and negatives)
+sales = sales.dropna(subset=['quantity'])
+sales = sales[sales['quantity'] > 0]
+
+# Standardize dates
+sales['transaction_date'] = pd.to_datetime(sales['transaction_date'])
+
+# --- Clean Inventory Data ---
+# Clean up whitespace and capitalize categories properly
+inventory['category'] = inventory['category'].str.strip().str.title()
+
+# --- Merge and Calculate ---
+# Join the tables on product_id
+df = pd.merge(sales, inventory, on='product_id', how='inner')
+
+# Calculate revenue per transaction
+df['total_revenue'] = df['quantity'] * df['price']
+
+# --- Grouping & Filtering ---
+# Find total revenue per category per day
+daily_revenue = df.groupby(['transaction_date', 'category'])['total_revenue'].sum().reset_index()
+
+# Find items that need to be restocked
+low_stock = inventory[inventory['current_stock'] < inventory['min_stock']]
+
+# --- Export ---
+# Save the final cleaned tables
+daily_revenue.to_csv('data/processed/daily_revenue.csv', index=False)
+low_stock.to_csv('data/processed/low_stock_alerts.csv', index=False)
+
+print("Data processing finished. Files saved to processed folder.")
