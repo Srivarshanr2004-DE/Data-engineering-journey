@@ -1,0 +1,5 @@
+product_id,product_name,category,current_stock,min_stock
+P002,Mechanical Keyboard,Electronics,5,15
+P003,Ergonomic Chair,Office Supplies,2,5
+P005,USB-C Hub,Electronics,8,20
+P008,Water Bottle,Accessories,4,15
