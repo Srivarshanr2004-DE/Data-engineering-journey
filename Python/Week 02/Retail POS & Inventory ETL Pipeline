@@ -1,0 +1,41 @@
+import pandas as pd
+import os
+
+def run_etl():
+    os.makedirs('data/processed', exist_ok=True)
+
+    # 1. EXTRACT
+    print("Extracting data...")
+    sales_df = pd.read_csv('data/raw/raw_sales.csv')
+    inventory_df = pd.read_json('data/raw/product_master.json')
+    
+    # 2. TRANSFORM - CLEANING SALES
+    print("Cleaning sales data...")
+    sales_df = sales_df.drop_duplicates()
+    sales_df['customer_id'] = sales_df['customer_id'].fillna('GUEST')
+    sales_df = sales_df.dropna(subset=['quantity'])
+    sales_df = sales_df[sales_df['quantity'] >= 1]
+    sales_df['transaction_date'] = pd.to_datetime(sales_df['transaction_date'])
+    
+    # 3. TRANSFORM - CLEANING INVENTORY
+    print("Cleaning inventory data...")
+    inventory_df['category'] = inventory_df['category'].str.strip().str.title()
+    
+    # 4. TRANSFORM - MERGING & ENRICHING
+    print("Merging dataframes...")
+    merged_df = pd.merge(sales_df, inventory_df, on='product_id', how='inner')
+    merged_df['total_revenue'] = merged_df['quantity'] * merged_df['price']
+    
+    # 5. AGGREGATE
+    print("Aggregating metrics...")
+    daily_revenue = merged_df.groupby(['transaction_date', 'category'])['total_revenue'].sum().reset_index()
+    low_stock_alerts = inventory_df[inventory_df['current_stock'] < inventory_df['min_stock']]
+    
+    # 6. LOAD
+    print("Loading processed data...")
+    daily_revenue.to_csv('data/processed/daily_revenue.csv', index=False)
+    low_stock_alerts.to_csv('data/processed/low_stock_alerts.csv', index=False)
+    print("ETL complete!")
+
+if __name__ == "__main__":
+    run_etl()
