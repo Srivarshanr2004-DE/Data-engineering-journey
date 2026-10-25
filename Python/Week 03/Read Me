@@ -1,0 +1,112 @@
+# Pandas ETL Pipeline: Retail Order Data Cleaning, Validation & Sales Analytics
+
+## Project Overview
+
+This project implements a data processing pipeline using Python and Pandas to transform messy retail order data into structured, validated, and analysis-ready datasets.
+
+The pipeline processes order transactions from multiple monthly CSV sources, standardizes inconsistent schemas and values, validates business rules, enriches transactions using customer and product reference data, calculates order-level financial metrics, and generates sales summaries.
+
+The project simulates common data quality challenges encountered in real-world data engineering workflows.
+
+## Objectives
+
+- Ingest and inspect data from multiple CSV sources.
+- Standardize inconsistent column names, text values, and data types.
+- Handle missing values, malformed records, invalid business values, and duplicate transactions.
+- Validate customer and product reference keys.
+- Separate valid and rejected records with explicit rejection reasons.
+- Calculate gross sales, discounts, net sales, taxes, and total order amounts.
+- Generate sales summaries by region and product category.
+- Validate record counts and export processing results.
+
+## Technology Stack
+
+- **Language:** Python
+- **Data Processing:** Pandas
+- **Numerical Operations:** NumPy
+- **Input Formats:** CSV
+- **Output Formats:** CSV, Excel
+- **Optional Output:** Parquet
+
+## Pipeline Architecture
+
+```text
+Raw January Orders ─┐
+                    ├──> Schema Standardization
+Raw February Orders ┘             |
+                                  v
+                         Data Consolidation
+                                  |
+                                  v
+                       Data Cleaning & Conversion
+                                  |
+                                  v
+                       Business Rule Validation
+                                  |
+                    ┌─────────────┴─────────────┐
+                    v                           v
+              Valid Orders                Rejected Orders
+                    |
+                    v
+             Reference Data Joins
+                    |
+                    v
+            Financial Calculations
+                    |
+                    v
+             Sales Aggregation
+                    |
+                    v
+              Output Datasets
+```
+
+## Data Quality Challenges
+
+The source data includes examples of:
+
+- Inconsistent column naming across monthly files.
+- Mixed capitalization and whitespace in categorical fields.
+- Multiple date formats and invalid dates.
+- Numeric fields containing malformed text.
+- Percentage values represented as strings.
+- Missing and invalid customer or product identifiers.
+- Duplicate transaction records and repeated order IDs.
+- Missing optional attributes.
+
+## Expected Outputs
+
+| File | Purpose |
+|---|---|
+| `final_orders.csv` | Validated and enriched order-level dataset |
+| `sales_summary.csv` | Aggregated sales metrics by region and product category |
+| `final_orders.xlsx` | Excel workbook containing processed results |
+| `rejected_orders.csv` | Rejected source records with validation reasons |
+
+## Data Quality and Validation
+
+The pipeline includes checks for:
+
+- Required schema and expected column names.
+- Valid dates and numeric values.
+- Positive whole-number quantities.
+- Non-negative unit prices.
+- Valid discount and tax rates.
+- Customer and product reference integrity.
+- Duplicate transaction identifiers.
+- Reconciliation between input, valid, and rejected records.
+
+## Key Learning Outcomes
+
+This project demonstrates practical use of Pandas for data ingestion, cleaning, transformation, joins, aggregation, data validation, and file exports. It also emphasizes traceability and explicit handling of rejected records.
+
+## Future Improvements
+
+- Add automated unit tests and reusable validation functions.
+- Introduce structured logging and execution metrics.
+- Add configurable business rules and duplicate-resolution policies.
+- Schedule the pipeline using Apache Airflow.
+- Store processed data in Parquet format and integrate cloud storage.
+
+## Disclaimer
+
+This is a learning project built using synthetic retail transaction data. Business rules and duplicate-resolution decisions are illustrative and should be confirmed with business stakeholders before production use.
