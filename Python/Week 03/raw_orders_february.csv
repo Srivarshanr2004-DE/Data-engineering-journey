@@ -1,0 +1,191 @@
+order_id,orderDate,customerId,product_id,quantity,unit price,discount,tax_rate,order_status,channel,sales_region,payment_method,buyer_email,source_system
+ORD-12000,2026-02-22,C008,P105,1,9800,1.2,,shipped ,Retail Store, WEST,upi ,BUYER@EXAMPLE.COM,mobile_app
+ORD-12001,08/02/2026,C008,P103,0,free,-0.1,0.12,CANCELLED,market place,East,,,mobile_app
+ORD-12002,2026-02-22,C009,P108,-1,free,10%,0.18,Pending,Retail Store,South,,BUYER@EXAMPLE.COM,mobile_app
+ORD-12003,19/02/2026,C003,P106,-1,2600,0,,Shipped,,East,Credit Card,BUYER@EXAMPLE.COM,marketplace
+ORD-12004,2026-02-26,C008,P103,-1,9800,,,Completed,market place,East,Cash,,marketplace
+ORD-12005,2026-02-09,C012,P104,2,850,0,18%,Cancelled,Retail Store,EAST,UPI,,marketplace
+ORD-12006,02-Feb-2026,C007,P103,,2200,,0.12,CANCELLED,PARTNER,north ,CREDIT CARD,,mobile_app
+ORD-12007,21-Feb-2026,C002,P103,-1,9800,1.2,0.18,Refunded,Marketplace,South,UPI,bad-email,marketplace
+ORD-12008,02/22/2026,C009,P107,2,7800,,0.12, COMPLETE ,online ,West,Credit Card,,marketplace
+ORD-12009,2026-02-20,C004,P104,1,850,-0.1,0.18,Returned,,South,Net Banking,,marketplace
+ORD-12010,15/02/2026,C009,P104,,-500,0,0.18,returned,online ,West,upi ,BUYER@EXAMPLE.COM,store_pos
+ORD-12011,08-Feb-2026,C003,P999,2,9800,0.15,0.12,Completed,market place,,Debit Card,buyer@example.com,marketplace
+ORD-12012,02-Feb-2026,C011,P107,,"2,200",10%,,CANCELLED,retail store,south,Cash,buyer@example.com,mobile_app
+ORD-12013,02/25/2026,C004,P104,2,free,0.05,0.05,Returned,Online,EAST,CREDIT CARD,buyer@example.com,mobile_app
+ORD-12014,13/02/2026,C005,P104,3,,0,18%,Cancelled,Retail Store,EAST,Net Banking,,store_pos
+ORD-12015,not-a-date,,P102,2,-500,-0.1,,pending ,market place,West,,,store_pos
+ORD-12016,2026-02-10,C004,P104,two,850,,0.18,Refunded,,West,CREDIT CARD,,store_pos
+ORD-12017,25-Feb-2026,C007,P108,-1,,10%,0.12,shipped , ONLine,EAST,,buyer@example.com,web
+ORD-12018,02/26/2026,C999,P106,2,3200,10%,18%,Completed,,West,Debit Card,,store_pos
+ORD-12019,02/18/2026,C005,P103,2,3200,0.1,18%,Pending,Marketplace,East,,bad-email,store_pos
+ORD-12020,02/25/2026,C012,P108,0,2200,10%,0.18, COMPLETE ,market place,East,Debit Card,BUYER@EXAMPLE.COM,web
+ORD-12021,2026-02-17,,P102, 3 ,1250,0,18%, COMPLETE ,Marketplace,SOUTH ,Debit Card,,mobile_app
+ORD-12022,02/17/2026,C006,P101,2,,-0.1,18%,pending ,PARTNER,South,UPI,BUYER@EXAMPLE.COM,marketplace
+ORD-12023,2026-02-01,C009,P105,-1,1450,0,,Refunded,retail store,south,Credit Card,,mobile_app
+ORD-12024,08/02/2026,C010,P999,2,3200,0.15,0.05,CANCELLED,Retail Store,North,CREDIT CARD,buyer@example.com,mobile_app
+ORD-12025,23/02/2026,C005,P102, 3 ,,0,0.18,CANCELLED,retail store,north ,,buyer@example.com,web
+ORD-12026,2026-02-21,C012,P103,1,2600,,,Cancelled,,SOUTH ,,,mobile_app
+ORD-12027,02/07/2026,C005,P101,1,,0.15,,Pending,Online,south,upi ,,mobile_app
+ORD-12028,19/02/2026,C999,P107,1,1450,0.05,,Shipped,,north ,,bad-email,marketplace
+ORD-12029,25/02/2026,C999,P102,-1,free,10%,0.18,completed,retail store,West,Credit Card,bad-email,marketplace
+ORD-12030,25-Feb-2026,C001,P105,,2600,,0.18,Cancelled,market place,north ,CREDIT CARD,,marketplace
+ORD-12031,03-Feb-2026,C999,P104,two,850,0,0.12, COMPLETE ,retail store,south,CREDIT CARD,bad-email,store_pos
+ORD-12032,2026-02-04,C001,P105,0,3200,0.15,0.18, COMPLETE ,Retail Store,south,CREDIT CARD,buyer@example.com,marketplace
+ORD-12033,2026-02-04,C002,P106,-1,850,-0.1,,Cancelled,retail store,South,Cash,buyer@example.com,marketplace
+ORD-12034,2026-02-25,C012,P999,2, 850 ,1.2,0.18,pending ,retail store,south,Debit Card,bad-email,store_pos
+ORD-12035,02/09/2026,C003,P102,1,9800,0.15,18%,shipped ,PARTNER,SOUTH ,upi ,bad-email,mobile_app
+ORD-12036,02/24/2026,C010,,2,2600,0,0.18,shipped ,Online,north ,upi ,BUYER@EXAMPLE.COM,marketplace
+ORD-12037,26-Feb-2026,C008,P106,4,,-0.1,0.18,shipped , ONLine,,Net Banking,buyer@example.com,store_pos
+ORD-12038,02/06/2026,C006,P105,two,free,,,Shipped, ONLine,north ,Cash,buyer@example.com,store_pos
+ORD-12039,04/02/2026,C010,P999,1,,1.2,0.18,Refunded,PARTNER,West,,bad-email,web
+ORD-12040,02/27/2026,C011,P108,1,,0.15,0.18,shipped ,Partner,north ,CREDIT CARD,,marketplace
+ORD-12041,02/20/2026,C010,P107,-1,"2,200",,,Completed, ONLine,EAST,Credit Card,,mobile_app
+ORD-12042,22-Feb-2026,C003,,1, 850 ,,0.05,Cancelled,retail store,SOUTH ,UPI,,store_pos
+ORD-12043,08/02/2026,C008,P106,4,2600,-0.1,,returned,Partner,North,UPI,buyer@example.com,web
+ORD-12044,02/10/2026,C002,P102,1.5,2200,10%,0.12,Cancelled,PARTNER,West,,buyer@example.com,store_pos
+ORD-12045,2026-02-16,C008,P108,3,850,0.15,0.18,Refunded,Retail Store,South,upi ,,mobile_app
+ORD-12046,24/02/2026,C009,P103,-1,2200,10%,,CANCELLED,PARTNER,West,CREDIT CARD,,mobile_app
+ORD-12047,02/21/2026,C007,P101,two, 850 ,0.1,18%,Pending,retail store,north ,UPI,,mobile_app
+ORD-12048,2026-02-09,C010,P102,,"2,200",0.05,0.12,Cancelled,Marketplace,East,Credit Card,bad-email,marketplace
+ORD-12049,17-Feb-2026,C010,P107,2,9800,-0.1,0.18,Cancelled, ONLine,East,Debit Card,bad-email,web
+ORD-12050,22/02/2026,C006,P102,2,1450,0,0.18,Cancelled,Partner,EAST,CREDIT CARD,buyer@example.com,mobile_app
+ORD-12051,02/19/2026,C007,P103,0,,120%,,pending ,Partner,EAST,Debit Card,buyer@example.com,store_pos
+ORD-12052,05/02/2026,C006,P108,2,1250,10%,0.18,Returned,Partner,West,CREDIT CARD,BUYER@EXAMPLE.COM,marketplace
+ORD-12053,02/14/2026,C007,P108,0,2200,0,,Completed,Marketplace, WEST,UPI,bad-email,mobile_app
+ORD-12054,18-Feb-2026,C003,P108,2,free,,,returned,Retail Store,,Credit Card,bad-email,store_pos
+ORD-12055,2026-02-18,C999,P108,-1,7800,,0.18,Refunded,Marketplace, WEST,UPI,buyer@example.com,store_pos
+ORD-12056,2026-02-12,C008,P102,,-500,0.1,0.18,Refunded,,North,CREDIT CARD,,mobile_app
+ORD-12057,26/02/2026,,P104,,1250,-0.1,0.12,returned,online ,,,,store_pos
+ORD-12058,23-Feb-2026,C005,,2,"2,200",0,0.18,CANCELLED,Online, WEST,Debit Card,,mobile_app
+ORD-12059,05-Feb-2026,,P104,,,,18%, COMPLETE ,, WEST,CREDIT CARD,buyer@example.com,marketplace
+ORD-12060,2026-02-03,C007,P999,two,1450,10%,18%,Returned, ONLine,,UPI,,marketplace
+ORD-12061,21-Feb-2026,,P102,,"2,200",,0.18,CANCELLED,Marketplace,East,Cash,bad-email,store_pos
+ORD-12062,11/02/2026,C010,P108,,3200,0,0.18,completed,PARTNER,South,Credit Card,,marketplace
+ORD-12063,2026-02-15,C007,P104,two,2200,0.15,0.18,shipped ,Retail Store,North,Cash,,store_pos
+ORD-12064,22/02/2026,C001,P107, 3 ,1450,0.1,18%,pending ,Retail Store,SOUTH ,UPI,,marketplace
+ORD-12065,03/02/2026,C010,P104,-1,,,0.18,Completed, ONLine,SOUTH ,CREDIT CARD,,marketplace
+ORD-12066,03/02/2026,C007,P102,two,-500,0,0.18,Cancelled, ONLine, WEST,Debit Card,buyer@example.com,mobile_app
+ORD-12067,21/02/2026,C002,P999,2,1250,-0.1,, COMPLETE ,PARTNER,North,Net Banking,,marketplace
+ORD-12068,02/20/2026,,P104,1,850,0.05,0.05,completed,,north ,upi ,buyer@example.com,store_pos
+ORD-12069,26/02/2026,C004,P105, 3 ,850,0.1,,Pending,,,Cash,,store_pos
+ORD-12070,07/02/2026,C012,P107,2,,0,0.05,Shipped,PARTNER,north ,Credit Card,,marketplace
+ORD-12071,2026-02-21,C009,P101,3,3200,0.05,18%,Pending,retail store,North,,,marketplace
+ORD-12072,2026-02-25,C001,,1,1250,0.15,0.18,Completed,Online,north ,,bad-email,marketplace
+ORD-12073,02/14/2026,C002,P999,-1, 850 ,0.05,0.12,completed,online ,SOUTH ,,,mobile_app
+ORD-12074,18-Feb-2026,C007,, 3 ,-500,0,0.12,Refunded,retail store,West,UPI,,web
+ORD-12075,2026-02-14,C008,,2,1250,0.15,,Refunded,Partner,SOUTH ,UPI,,web
+ORD-12076,02/06/2026,C006,P999,-1,-500,0.15,0.18,Cancelled,Partner, WEST,Credit Card,,store_pos
+ORD-12077,02/26/2026,C005,P999,1,1450,-0.1,,completed,PARTNER,East,,bad-email,web
+ORD-12078,16/02/2026,C006,P103,2,-500,0,,pending ,Retail Store,West,,,web
+ORD-12079,2026-02-28,C004,P101,0,3200,,0.18, COMPLETE ,Online,EAST,CREDIT CARD,,store_pos
+ORD-12080,02/08/2026,C012,P106,2,850,-0.1,0.12,completed,market place,South,Debit Card,,web
+ORD-12081,2026-02-13,C008,P105,,1450,10%,0.18,returned,PARTNER,South,upi ,,store_pos
+ORD-12082,19-Feb-2026,C012,,2,2600,10%,,Returned,Marketplace,EAST,Net Banking,,web
+ORD-12083,2026-02-14,C004,P999,3,,0,0.12,Completed,retail store, WEST,Credit Card,,mobile_app
+ORD-12084,02/14/2026,C001,P103,two,1450,0,0.18,Shipped,market place,north ,upi ,buyer@example.com,web
+ORD-12085,2026-02-19,C009,P103, 3 ,9800,0,,Pending,Online,north ,Debit Card,,store_pos
+ORD-12086,09-Feb-2026,C999,P107,two,free,10%,0.12,Returned,online ,West,Credit Card,,mobile_app
+ORD-12087,2026-02-25,C003,P102,1,2600,,0.12,CANCELLED,Retail Store,EAST,upi ,,marketplace
+ORD-12088,02/10/2026,C005,P102,1,2200,0.15,0.05,Refunded,,South,Net Banking,bad-email,mobile_app
+ORD-12089,03/02/2026,C006,P107,-1,1250,0.15,0.12, COMPLETE ,Online,north ,,BUYER@EXAMPLE.COM,mobile_app
+ORD-12090,02/04/2026,C002,P103,1,1250,0,0.05,Shipped,Partner,West,CREDIT CARD,bad-email,web
+ORD-12091,19-Feb-2026,,P102,1,850,0.1,,Returned,Partner,SOUTH ,upi ,,web
+ORD-12092,2026-02-15,C003,,4,free,,18%,Completed,retail store,north ,Debit Card,bad-email,mobile_app
+ORD-12093,06-Feb-2026,C005,P108,1,1250,-0.1,,Pending,Marketplace, WEST,,buyer@example.com,marketplace
+ORD-12094,2026-02-02,C005,P107,1,9800,0.1,,returned,Marketplace,EAST,UPI,buyer@example.com,store_pos
+ORD-12095,02/16/2026,C006,,-1,3200,,0.12, COMPLETE ,Online,North,Net Banking,,store_pos
+ORD-12096,02/02/2026,C009,P106,, 850 ,0.1,0.18,completed,Marketplace,West,Cash,BUYER@EXAMPLE.COM,web
+ORD-12097,25/02/2026,C010,P107,3,2200,0.05,0.18,Pending, ONLine,North,UPI,bad-email,mobile_app
+ORD-12098,19/02/2026,,P108,-1,1450,0.05,18%,Completed,Retail Store,South,Net Banking,BUYER@EXAMPLE.COM,mobile_app
+ORD-12099,02/01/2026,C001,P106,2,7800,0.05,0.12,Refunded,Partner,North,UPI,,mobile_app
+ORD-12100,19/02/2026,C999,P102,-1,3200,0,0.12,Refunded,retail store,,Credit Card,bad-email,store_pos
+ORD-12101,11/02/2026,C003,P107,,,,,Cancelled,Partner,EAST,upi ,,mobile_app
+ORD-12102,13-Feb-2026,C012,P105,1,2200,0,,Pending,retail store,,UPI,,store_pos
+ORD-12103,26/02/2026,C011,,1,2600,0.05,0.12,Refunded,Retail Store,West,upi ,bad-email,mobile_app
+ORD-12104,2026-02-21,,P106,0,1250,0.15,0.18,Shipped,Retail Store,North,Cash,,web
+ORD-12105,02/02/2026,C008,P107,1,9800,,18%,Cancelled,market place,north ,Credit Card,buyer@example.com,mobile_app
+ORD-12106,02/06/2026,C002,P101,2,1250,10%,0.12,completed,Retail Store,North,Debit Card,buyer@example.com,mobile_app
+ORD-12107,2026-02-24,C009,P102,3, 850 ,-0.1,18%,Refunded,Online,north ,Debit Card,BUYER@EXAMPLE.COM,marketplace
+ORD-12108,2026-02-06,C002,P106,2,7800,,,returned,market place, WEST,Cash,bad-email,mobile_app
+ORD-12109,2026-02-04,C007,,-1,2600,0.05,0.18,Cancelled,Online,north ,Credit Card,bad-email,marketplace
+ORD-12110,2026-02-07,C001,P104,1,,0.15,0.18,Returned,Retail Store, WEST,CREDIT CARD,buyer@example.com,marketplace
+ORD-12111,22-Feb-2026,C002,P999,4,2200,10%,18%,Cancelled,Partner,East,UPI,bad-email,marketplace
+ORD-12112,15-Feb-2026,C004,P105,2,1250,0.05,0.05,Refunded,Retail Store,SOUTH ,upi ,BUYER@EXAMPLE.COM,marketplace
+ORD-12113,25/02/2026,C009,P101,4,"2,200",,,pending ,PARTNER,,Net Banking,buyer@example.com,store_pos
+ORD-12114,02/03/2026,,P101,-1, 850 ,1.2,0.05,Pending,,south,Credit Card,buyer@example.com,mobile_app
+ORD-12115,06/02/2026,C999,P104,1,1250,,0.18,pending ,retail store,West,Debit Card,BUYER@EXAMPLE.COM,store_pos
+ORD-12116,2026-02-11,C002,P107,-1,9800,1.2,0.12,shipped ,market place,East,UPI,BUYER@EXAMPLE.COM,marketplace
+ORD-12117,02/04/2026,C003,P103,2, 850 ,-0.1,0.05,completed,Retail Store,,Credit Card,bad-email,store_pos
+ORD-12118,14-Feb-2026,C007,P108,2, 850 ,,0.18, COMPLETE ,online ,north ,Debit Card,BUYER@EXAMPLE.COM,marketplace
+ORD-12119,02/02/2026,C006,P104,1,free,,0.12,Cancelled,Online,North,Cash,bad-email,store_pos
+ORD-12120,02/27/2026,,P102,2,2200,0.15,,Returned, ONLine, WEST,CREDIT CARD,BUYER@EXAMPLE.COM,web
+ORD-12121,02/07/2026,C004,P107,two,2600,1.2,0.05,Cancelled,Online,EAST,Debit Card,,store_pos
+ORD-12122,02/23/2026,C003,P999,2,1250,0.05,0.18,Shipped,Online,West,UPI,buyer@example.com,web
+ORD-12123,12/02/2026,C005,P106,0,"2,200",,,completed,Online,West,upi ,buyer@example.com,marketplace
+ORD-12124,02/06/2026,C010,P999,3,3200,0.05,0.05,shipped ,Retail Store, WEST,UPI,buyer@example.com,web
+ORD-12125,06/02/2026,,P104, 3 ,7800,0.1,0.12,pending ,retail store,EAST,UPI,,marketplace
+ORD-12126,05/02/2026,C010,P101,2,1450,-0.1,0.05,shipped ,online ,north ,CREDIT CARD,bad-email,marketplace
+ORD-12127,09/02/2026,C008,P105, 3 ,"2,200",-0.1,18%,Pending,Retail Store,South,,bad-email,store_pos
+ORD-12128,2026-02-10,C008,P102,3,1450,10%,0.05,shipped ,online , WEST,Net Banking,,mobile_app
+ORD-12129,02/02/2026,C011,P106, 3 ,2200,0,,Returned,online , WEST,CREDIT CARD,buyer@example.com,marketplace
+ORD-12130,2026-02-24,C010,,2,3200,0.1,,returned,PARTNER,North,,bad-email,mobile_app
+ORD-12131,27/02/2026,C005,P102,0,2200,0.15,,returned,Partner,North,Credit Card,,store_pos
+ORD-12132,08-Feb-2026,C007,P106,3,1450,-0.1,0.12,Returned,Retail Store,East,UPI,BUYER@EXAMPLE.COM,web
+ORD-12133,16/02/2026,C009,P102, 3 ,9800,1.2,0.12,CANCELLED,Online,south,Debit Card,,store_pos
+ORD-12134,02/14/2026,C003,P106,two,2200,0,18%,Cancelled,Partner,North,UPI,,marketplace
+ORD-12135,09/02/2026,C999,P103,2,-500,0.05,18%,completed,Partner,,CREDIT CARD,buyer@example.com,marketplace
+ORD-12136,02/14/2026,C007,P101,1,"2,200",0.1,,Cancelled,Online,North,,,web
+ORD-12137,2026-02-22,C011,P104,2,free,10%,0.12, COMPLETE ,Retail Store,north ,,BUYER@EXAMPLE.COM,store_pos
+ORD-12138,2026-02-06,,P101,2,1450,,,returned,,EAST,upi ,buyer@example.com,mobile_app
+ORD-12139,02/11/2026,C006,P104,1,-500,,0.18,Shipped,Marketplace,south,Net Banking,,mobile_app
+ORD-12140,04-Feb-2026,C012,P101,4,,0.15,0.05,returned,,South,UPI,,web
+ORD-12141,2026-02-02,C007,P108,4,850,1.2,0.12,Returned,Partner,West,UPI,bad-email,marketplace
+ORD-12142,2026-02-22,C011,P999,2, 850 ,-0.1,, COMPLETE ,retail store,SOUTH ,,BUYER@EXAMPLE.COM,web
+ORD-12143,2026-02-10,C999,P102,0,7800,-0.1,0.18,shipped ,market place,West,upi ,buyer@example.com,store_pos
+ORD-12144,2026-02-06,C009,P108,2,free,,0.12,Shipped,Online,South,Credit Card,,marketplace
+ORD-12145,2026-02-05,C999,P999,1,free,0,0.12,pending ,Marketplace,East,Cash,bad-email,marketplace
+ORD-12146,2026-02-02,,P103,1,1450,10%,0.05,pending , ONLine,north ,Credit Card,,web
+ORD-12147,01/02/2026,C011,P103,3,3200,,,shipped ,Retail Store,North,upi ,,web
+ORD-12148,02/13/2026,C008,P105,4,free,,0.05,CANCELLED,Partner,SOUTH ,Debit Card,,mobile_app
+ORD-12149,02/04/2026,C010,P108,, 850 ,,0.18,Pending,retail store,North,UPI,,marketplace
+ORD-12150,2026-02-16,C007,P108,1,850,0.15,,Cancelled,Online,EAST,Net Banking,bad-email,web
+ORD-12151,14/02/2026,C008,P106, 3 ,,,0.18,returned,,South,UPI,,marketplace
+ORD-12152,02/28/2026,,P103,1,-500,,0.12,Shipped, ONLine, WEST,UPI,BUYER@EXAMPLE.COM,mobile_app
+ORD-12153,02/18/2026,C007,P104,1,2600,,0.05,Pending,PARTNER,SOUTH ,,buyer@example.com,store_pos
+ORD-12154,02/04/2026,C012,P101,1,9800,,0.18,returned,market place,South,Credit Card,BUYER@EXAMPLE.COM,store_pos
+ORD-12155,17/02/2026,C011,P108,3,3200,0,0.05,Shipped,PARTNER,North,,BUYER@EXAMPLE.COM,marketplace
+ORD-12156,23-Feb-2026,C012,P108,1,850,0.1,0.18,Cancelled, ONLine, WEST,,BUYER@EXAMPLE.COM,store_pos
+ORD-12157,2026-02-23,C001,P103,0,2200,,0.18,shipped ,,West,Net Banking,,marketplace
+ORD-12158,02/07/2026,,P104,two,3200,0,0.05,CANCELLED,Online,,Credit Card,buyer@example.com,marketplace
+ORD-12159,22/02/2026,C008,P101,-1,free,0,,CANCELLED,,East,,,mobile_app
+ORD-12160,24/02/2026,C002,P107, 3 , 850 ,-0.1,0.12,returned,retail store,north ,Net Banking,bad-email,marketplace
+ORD-12161,11-Feb-2026,C008,P103,1,9800,-0.1,,Refunded,market place, WEST,,bad-email,mobile_app
+ORD-12162,07/02/2026,C010,P105, 3 ,3200,0.05,,pending ,Partner,EAST,,bad-email,web
+ORD-12163,25-Feb-2026,C009,P108,2, 850 ,,,Refunded,market place, WEST,CREDIT CARD,,web
+ORD-12164,02/01/2026,C003,P101, 3 ,1250,0.1,0.12, COMPLETE ,online , WEST,Debit Card,,store_pos
+ORD-12165,2026-02-07,C006,P108,1, 850 ,1.2,0.05,Shipped,market place,north ,Net Banking,BUYER@EXAMPLE.COM,store_pos
+ORD-12166,2026-02-23,C007,P107,4,-500,10%,,Completed,Online, WEST,Net Banking,BUYER@EXAMPLE.COM,marketplace
+ORD-12167,27/02/2026,C011,P106,, 850 ,1.2,,Pending,Marketplace,West,Cash,buyer@example.com,mobile_app
+ORD-12168,2026-02-22,C003,P103,two,"2,200",0,18%,Completed,retail store, WEST,,bad-email,mobile_app
+ORD-12169,06-Feb-2026,C001,P106,0,free,0.05,0.18, COMPLETE , ONLine,,UPI,BUYER@EXAMPLE.COM,store_pos
+ORD-12170,16-Feb-2026,C002,P106,-1,7800,0.05,,completed,market place,south,CREDIT CARD,BUYER@EXAMPLE.COM,marketplace
+ORD-12171,03-Feb-2026,C004,P104, 3 ,3200,10%,0.12,shipped ,Marketplace,,,buyer@example.com,web
+ORD-12172,04-Feb-2026,C008,P104, 3 , 850 ,-0.1,0.18,Completed, ONLine,north ,Credit Card,buyer@example.com,store_pos
+ORD-12173,18-Feb-2026,C001,P999,,3200,1.2,0.05,returned,PARTNER,East,UPI,bad-email,mobile_app
+ORD-12174,2026-02-11,C002,P103,,"2,200",1.2,0.18,pending ,Retail Store,West,Net Banking,buyer@example.com,web
+ORD-12175,02/07/2026,C011,P102,two,,0.05,0.18,Returned, ONLine,South,Credit Card,,web
+ORD-12176,06-Feb-2026,C009,P102,2,7800,0.15,18%,CANCELLED,PARTNER,north ,CREDIT CARD,bad-email,web
+ORD-12177,2026-02-13,C009,P101, 3 ,free,-0.1,0.18,Refunded,,South,Credit Card,bad-email,web
+ORD-12178,10-Feb-2026,C010,P102,2,-500,,18%,CANCELLED,Online,East,Debit Card,BUYER@EXAMPLE.COM,mobile_app
+ORD-12179,02/05/2026,C999,P999,2,,0.05,0.12,pending , ONLine,South,,BUYER@EXAMPLE.COM,mobile_app
+ORD-12180,2026-02-04,C001,,2,9800,1.2,,completed,online ,West,upi ,,marketplace
+ORD-12181,21/02/2026,C003,P103,2, 850 ,0.15,0.18,completed,Partner,,UPI,BUYER@EXAMPLE.COM,marketplace
+ORD-12182,2026-02-21,C005,P102,2,850,0.1,,Pending,PARTNER,North,upi ,,mobile_app
+ORD-12183,04-Feb-2026,C010,P102,2,3200,,18%,Cancelled,, WEST,Debit Card,BUYER@EXAMPLE.COM,store_pos
+ORD-12184,26-Feb-2026,C007,P103,1,3200,0.1,0.05,Shipped,retail store, WEST,upi ,,store_pos
+ORD-12185,02/16/2026,C008,P106,,1450,,,completed,Partner,,Credit Card,bad-email,mobile_app
+ORD-12186,18/02/2026,C005,P102,two,850,0,0.05,returned,Online,,CREDIT CARD,BUYER@EXAMPLE.COM,mobile_app
+ORD-12187,02-Feb-2026,C009,P999,0,,0.05,0.12,CANCELLED,Marketplace,,Cash,,marketplace
+ORD-12188,2026-02-17,C007,P106,-1,1250,0.1,0.05,Pending,Partner,EAST,Debit Card,buyer@example.com,mobile_app
+ORD-12189,06/02/2026,C012,P108,3,1250,0.1,0.05,Returned,Marketplace,SOUTH ,Cash,bad-email,mobile_app

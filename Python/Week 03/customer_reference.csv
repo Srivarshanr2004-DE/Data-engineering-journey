@@ -1,0 +1,13 @@
+customer_id,customer_name,email,phone,city,state,segment
+C001,Ananya Rao,ananya.rao@example.com,+91 98765 43210,Chennai,Tamil Nadu,Retail
+C002,Vikram Shah,VIKRAM.SHAH@EXAMPLE.COM,9876543211,Mumbai,Maharashtra,Wholesale
+C003,Meera Iyer,meera.iyer@example.com,,Bengaluru,Karnataka,Retail
+C004,Arjun Nair,arjun.nair@example.com,+91-98765-43213,Kochi,Kerala,Corporate
+C005,Sana Khan,sana.khan@example.com,98765 43214,Hyderabad,Telangana,Retail
+C006,Rahul Menon,rahul.menon@example.com,+91 98765 43215,Coimbatore,Tamil Nadu,Wholesale
+C007,Divya Krishnan,divya.k@example.com,9876543216,Chennai,Tamil Nadu,Corporate
+C008,Karthik Das,karthik.das@example.com,+91 98765 43217,Pune,Maharashtra,Retail
+C009,Nisha Verma,nisha.verma@example.com,9876543218,Delhi,Delhi,Wholesale
+C010,Joseph Mathew,j.mathew@example.com,+91-98765-43219,Madurai,Tamil Nadu,Retail
+C011,Priya Bose,priya.bose@example.com,9876543220,Kolkata,West Bengal,Corporate
+C012,Imran Ali,imran.ali@example.com,9876543221,Jaipur,Rajasthan,Retail

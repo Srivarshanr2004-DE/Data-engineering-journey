@@ -1,0 +1,9 @@
+product_id,product_name,category,list_price,tax_rate
+P101,Laptop Stand,Accessories,1250.0,0.18
+P102,Wireless Mouse,Accessories,850.0,0.18
+P103,USB-C Hub,Accessories,2200.0,0.18
+P104,Office Chair,Furniture,7800.0,0.18
+P105,Desk Lamp,Furniture,1450.0,0.12
+P106,Mechanical Keyboard,Accessories,3200.0,0.18
+P107,Monitor 24in,Electronics,9800.0,0.18
+P108,Webcam HD,Electronics,2600.0,0.18
