@@ -1,0 +1,396 @@
+
+import pandas as pd
+import numpy as np
+
+# ==================================================
+# 1. LOAD RAW DATA
+# ==================================================
+
+jan_df = pd.read_csv("raw_orders_january.csv", dtype="string")
+feb_df = pd.read_csv("raw_orders_february.csv", dtype="string")
+customers_df = pd.read_csv("customer_reference.csv", dtype="string")
+products_df = pd.read_csv("product_reference.csv")
+
+jan_df["source_month"] = "January"
+feb_df["source_month"] = "February"
+
+# ==================================================
+# 2. STANDARDIZE SCHEMA
+# ==================================================
+
+feb_df = feb_df.rename(columns={
+    "orderDate": "order_date",
+    "customerId": "customer_id",
+    "unit price": "unit_price",
+    "channel": "sales_channel"
+})
+
+required_columns = [
+    "order_id", "order_date", "customer_id", "product_id",
+    "quantity", "unit_price", "discount", "tax_rate",
+    "order_status", "sales_channel", "sales_region",
+    "payment_method", "buyer_email", "source_system",
+    "source_month"
+]
+
+for name, frame in [("January", jan_df), ("February", feb_df)]:
+    missing = set(required_columns) - set(frame.columns)
+    if missing:
+        raise ValueError(f"{name} missing columns: {missing}")
+
+    if set(required_columns) != set(frame.columns):
+        raise ValueError(f"{name} contains unexpected columns")
+
+# ==================================================
+# 3. COMBINE SOURCES
+# ==================================================
+
+source_count = len(jan_df) + len(feb_df)
+
+report = pd.concat(
+    [jan_df, feb_df],
+    ignore_index=True
+)
+
+if len(report) != source_count:
+    raise ValueError("Source row count mismatch")
+
+# Preserve raw values before transformation
+for col in [
+    "order_date", "customer_id", "product_id", "quantity",
+    "unit_price", "discount", "tax_rate", "order_id"
+]:
+    report[f"{col}_raw"] = report[col]
+
+# ==================================================
+# 4. STANDARDIZE TEXT
+# ==================================================
+
+text_columns = [
+    "order_id", "customer_id", "product_id",
+    "order_status", "sales_channel", "sales_region",
+    "payment_method", "source_system"]
+
+for col in text_columns:
+    report[col] = (
+        report[col]
+        .astype("string")
+        .str.strip()
+        .replace("", pd.NA))
+
+report["order_status"] = report["order_status"].str.lower()
+
+status_map = {
+    "completed": "Completed",
+    "shipped": "Shipped",
+    "cancelled": "Cancelled",
+    "returned": "Returned",
+    "pending": "Pending",
+    "refunded": "Refunded"}
+
+report["order_status"] = report["order_status"].map(status_map)
+
+report["sales_channel"] = report["sales_channel"].str.lower()
+
+channel_map = {
+    "online": "Online",
+    "retail store": "Retail Store",
+    "partner": "Partner",
+    "marketplace": "Marketplace",
+    "market place": "Marketplace"}
+
+report["sales_channel"] = report["sales_channel"].map(channel_map)
+
+# Normalize region and payment labels
+report["sales_region"] = report["sales_region"].str.title()
+report["payment_method"] = report["payment_method"].str.title()
+
+# ==================================================
+# 5. CONVERT DATES
+# ==================================================
+
+def parse_order_date(value):
+    if pd.isna(value):
+        return pd.NaT
+
+    value = str(value).strip()
+
+    # ISO format: 2026-01-31
+    try:
+        return pd.to_datetime(value, format="%Y-%m-%d")
+    except ValueError:
+        pass
+
+    # Format such as 15-Feb-2026
+    try:
+        return pd.to_datetime(value, format="%d-%b-%Y")
+    except ValueError:
+        pass
+
+    try:
+        first, second, year = value.split("/")
+        first, second = int(first), int(second)
+
+        if first > 12:
+            return pd.to_datetime(value, format="%d/%m/%Y")
+        elif second > 12:
+            return pd.to_datetime(value, format="%m/%d/%Y")
+        else:
+            return pd.to_datetime(value, format="%d/%m/%Y")
+    except (ValueError, TypeError):
+        return pd.NaT
+
+report["order_date_converted"] = report["order_date_raw"].apply(
+    parse_order_date
+)
+
+# ==================================================
+# 6. CONVERT NUMERIC FIELDS
+# ==================================================
+
+# Quantity
+report["quantity_num"] = pd.to_numeric(
+    report["quantity"].str.strip(),
+    errors="coerce"
+)
+
+price_text = (
+    report["unit_price"]
+    .str.replace(",", "", regex=False)
+    .str.strip()
+)
+
+report["unit_price_num"] = pd.to_numeric(
+    price_text,
+    errors="coerce"
+)
+
+for col in ["discount", "tax_rate"]:
+    text = report[col].str.strip()
+    has_percent = text.str.endswith("%", na=False)
+
+    numeric_text = pd.to_numeric(
+        text.str.replace("%", "", regex=False),
+        errors="coerce"
+    )
+
+    report[f"{col}_num"] = numeric_text.where(
+        ~has_percent,
+        numeric_text / 100
+    )
+
+# ==================================================
+# 7. REFERENCE KEY STANDARDIZATION
+# ==================================================
+
+for col in ["customer_id", "product_id"]:
+    report[col] = report[col].str.upper()
+
+customers_df["customer_id"] = (
+    customers_df["customer_id"].str.strip().str.upper()
+)
+products_df["product_id"] = (
+    products_df["product_id"].str.strip().str.upper()
+)
+
+# ==================================================
+# 8. DUPLICATE INVESTIGATION
+# ==================================================
+
+# Check exact duplicates, excluding source_month and helper fields
+duplicate_check_columns = [
+    "order_id", "order_date", "customer_id", "product_id",
+    "quantity", "unit_price", "discount", "tax_rate",
+    "order_status", "sales_channel", "sales_region",
+    "payment_method", "buyer_email", "source_system"
+]
+
+report["exact_duplicate"] = report.duplicated(
+    subset=duplicate_check_columns,
+    keep=False
+)
+
+# Reject every row whose order ID appears more than once.
+# This conservative rule avoids choosing a winner without business approval.
+report["duplicate_order_id"] = (
+    report["order_id"].notna()
+    & report["order_id"].duplicated(keep=False)
+)
+
+# ==================================================
+# 9. VALIDATION RULES
+# ==================================================
+
+checks = pd.DataFrame(index=report.index)
+
+checks["missing_order_id"] = (
+    report["order_id"].isna()
+    | report["order_id"].eq("")
+)
+
+checks["invalid_date"] = report["order_date_converted"].isna()
+
+checks["unknown_customer"] = (
+    report["customer_id"].isna()
+    | ~report["customer_id"].isin(customers_df["customer_id"])
+)
+
+checks["unknown_product"] = (
+    report["product_id"].isna()
+    | ~report["product_id"].isin(products_df["product_id"])
+)
+
+checks["invalid_quantity"] = (
+    report["quantity_num"].isna()
+    | (report["quantity_num"] <= 0)
+    | (report["quantity_num"] % 1 != 0)
+)
+
+checks["invalid_price"] = (
+    report["unit_price_num"].isna()
+    | (report["unit_price_num"] < 0)
+)
+
+checks["invalid_discount"] = (
+    report["discount_num"].isna()
+    | ~report["discount_num"].between(0, 1)
+)
+
+checks["invalid_tax_rate"] = (
+    report["tax_rate_num"].isna()
+    | ~report["tax_rate_num"].between(0, 1)
+)
+
+checks["exact_duplicate_row"] = report["exact_duplicate"]
+checks["duplicate_order_id"] = report["duplicate_order_id"]
+
+# Record all rejection reasons
+reason_columns = list(checks.columns)
+reason_text = pd.Series("", index=report.index, dtype="string")
+
+for rule in reason_columns:
+    failed = checks[rule]
+    reason_text.loc[failed] += rule + "; "
+
+report["rejection_reason"] = reason_text.str.rstrip("; ")
+
+valid_mask = ~checks.any(axis=1)
+
+valid_orders = report.loc[valid_mask].copy()
+rejected_orders = report.loc[~valid_mask].copy()
+
+# ==================================================
+# 10. RECONCILIATION
+# ==================================================
+
+if len(report) != len(valid_orders) + len(rejected_orders):
+    raise ValueError("Row count reconciliation failed")
+
+print("Source rows:", source_count)
+print("Combined rows:", len(report))
+print("Valid rows:", len(valid_orders))
+print("Rejected rows:", len(rejected_orders))
+
+# ==================================================
+# 11. ENRICH VALID ORDERS
+# ==================================================
+
+valid_orders = valid_orders.merge(
+    customers_df,
+    on="customer_id",
+    how="left",
+    validate="many_to_one",
+    suffixes=("", "_customer")
+)
+
+valid_orders = valid_orders.merge(
+    products_df,
+    on="product_id",
+    how="left",
+    validate="many_to_one",
+    suffixes=("", "_product")
+)
+
+# ==================================================
+# 12. CALCULATE ORDER AMOUNTS
+# ==================================================
+
+valid_orders["gross_amount"] = (
+    valid_orders["quantity_num"]
+    * valid_orders["unit_price_num"]
+)
+
+valid_orders["discount_amount"] = (
+    valid_orders["gross_amount"]
+    * valid_orders["discount_num"]
+)
+
+valid_orders["net_amount"] = (
+    valid_orders["gross_amount"]
+    - valid_orders["discount_amount"]
+)
+
+valid_orders["tax_amount"] = (
+    valid_orders["net_amount"]
+    * valid_orders["tax_rate_num"]
+)
+
+valid_orders["total_amount"] = (
+    valid_orders["net_amount"]
+    + valid_orders["tax_amount"]
+)
+
+currency_columns = [
+    "gross_amount", "discount_amount",
+    "net_amount", "tax_amount", "total_amount"
+]
+
+valid_orders[currency_columns] = (
+    valid_orders[currency_columns].round(2)
+)
+
+# ==================================================
+# 13. BUSINESS SUMMARY
+# ==================================================
+
+# Only completed and shipped orders count as sales.
+sales_orders = valid_orders.loc[
+    valid_orders["order_status"].isin(["Completed", "Shipped"])
+].copy()
+
+sales_summary = (
+    sales_orders
+    .groupby(["sales_region", "category"], dropna=False)
+    .agg(
+        order_count=("order_id", "nunique"),
+        units_sold=("quantity_num", "sum"),
+        net_sales=("net_amount", "sum"),
+        total_sales=("total_amount", "sum")
+    )
+    .reset_index()
+)
+
+sales_summary[["net_sales", "total_sales"]] = (
+    sales_summary[["net_sales", "total_sales"]].round(2)
+)
+
+# ==================================================
+# 14. EXPORT
+# ==================================================
+
+valid_orders.to_csv("final_orders.csv", index=False)
+sales_summary.to_csv("sales_summary.csv", index=False)
+rejected_orders.to_csv("rejected_orders.csv", index=False)
+
+with pd.ExcelWriter("final_orders.xlsx") as writer:
+    valid_orders.to_excel(
+        writer, sheet_name="Valid_Orders", index=False
+    )
+    sales_summary.to_excel(
+        writer, sheet_name="Sales_Summary", index=False
+    )
+    rejected_orders.to_excel(
+        writer, sheet_name="Rejected_Orders", index=False
+    )
+
+print("ETL pipeline completed.")
