@@ -1,13 +1,12 @@
 # Data Engineering Journey
 
-A structured 9-month transition from Mechanical Engineering/System Engineering
+A structured transition from Mechanical Engineering/System Engineering
 into Data Engineering.
 
 ## Current Status
 
 - Starting point: TCS System Engineer
 - Target: Data Engineer
-- Roadmap duration: 9 months
 
 ## Learning Stack
 
