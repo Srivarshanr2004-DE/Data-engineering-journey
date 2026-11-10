@@ -1,0 +1,26 @@
+{
+    "source_file": "raw_orders.csv",
+    "total_records": 253,
+    "valid_records": 149,
+    "rejected_records": 104,
+    "rejection_rate_percent": 41.11,
+    "missing_values_in_raw_file": {
+        "order_id": 0,
+        "customer_id": 10,
+        "order_date": 0,
+        "quantity": 0,
+        "unit_price": 6,
+        "sales_region": 41,
+        "payment_status": 41
+    },
+    "rejection_reason_counts": {
+        "missing_order_id": 0,
+        "missing_customer_id": 10,
+        "invalid_order_date": 8,
+        "invalid_quantity": 14,
+        "invalid_unit_price": 11,
+        "missing_sales_region": 41,
+        "missing_payment_status": 41,
+        "exact_duplicate": 2
+    }
+}

@@ -1,0 +1,105 @@
+order_id,customer_id,order_date,quantity,unit_price,sales_region,payment_status,missing_order_id,missing_customer_id,invalid_order_date,invalid_quantity,invalid_unit_price,missing_sales_region,missing_payment_status,exact_duplicate,rejection_reason,rejected,record_status
+ORD0009,C109,2026-03-20,6,999,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0011,C103,2026-02-09,8,1499,,Cancelled,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0012,C105,2026-02-12,4,1499,East,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0015,C107,2026-03-11,1,249,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0020,C107,2026-01-17,8,199,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0023,,2026-03-24,2,1499,South,Cancelled,False,True,False,False,False,False,False,False,missing customer id; ,True,Rejected
+ORD0025,C114,2026-01-24,5,999,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0027,C106,2026-01-12,3,999,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0029,C125,,1,249,South,Completed,False,False,True,False,False,False,False,False,invalid order date; ,True,Rejected
+ORD0030,C102,2026-03-16,2,999,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0031,C104,2026-03-16,,499,South,Pending,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0035,C107,2026-03-08,1,199,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0037,C107,2026-02-22,0,249,South,Pending,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0038,C123,2026-03-19,8,249,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0040,C111,2026-02-14,8,1499,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0041,C120,2026-03-04,1,,North,Cancelled,False,False,False,False,True,False,False,False,invalid unit price; ,True,Rejected
+ORD0043,C104,2026-02-06,5,-250,North,Completed,False,False,False,False,True,False,False,False,invalid unit price; ,True,Rejected
+ORD0046,,2026-01-06,7,199,West,Cancelled,False,True,False,False,False,False,False,False,missing customer id; ,True,Rejected
+ORD0051,C105,2026-01-20,2,1499,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0053,C119,2026-01-14,6,499,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0054,C122,2026-02-08,5,799,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0058,C105,,5,999,,,False,False,True,False,False,True,True,False,invalid order date; missing sales region; missing payment status; ,True,Rejected
+ORD0062,C116,2026-02-09,,199,North,Completed,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0069,,2026-01-26,3,799,South,Pending,False,True,False,False,False,False,False,False,missing customer id; ,True,Rejected
+ORD0070,C123,2026-02-26,7,1499,,,False,False,False,False,False,True,True,False,missing sales region; missing payment status; ,True,Rejected
+ORD0074,C110,2026-02-28,0,499,East,,False,False,False,True,False,False,True,False,invalid quantity; missing payment status; ,True,Rejected
+ORD0078,C103,2026-02-19,4,499,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0080,C121,2026-02-20,6,1499,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0082,C112,2026-03-10,3,,West,,False,False,False,False,True,False,True,False,invalid unit price; missing payment status; ,True,Rejected
+ORD0086,C121,2026-01-17,8,-250,North,,False,False,False,False,True,False,True,False,invalid unit price; missing payment status; ,True,Rejected
+ORD0087,C102,,6,199,,Pending,False,False,True,False,False,True,False,False,invalid order date; missing sales region; ,True,Rejected
+ORD0089,C107,2026-02-20,2,799,West,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0091,C104,2026-03-23,1,199,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0092,,2026-01-26,8,199,South,Pending,False,True,False,False,False,False,False,False,missing customer id; ,True,Rejected
+ORD0093,C103,2026-02-05,,1499,South,Pending,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0094,C119,2026-02-25,8,999,,,False,False,False,False,False,True,True,False,missing sales region; missing payment status; ,True,Rejected
+ORD0097,C115,2026-03-08,5,799,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0099,C104,2026-01-08,7,1499,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0101,C113,2026-01-07,7,799,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0103,C109,2026-02-28,7,999,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0106,C123,2026-01-27,8,249,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0111,C111,2026-01-21,0,1499,South,Completed,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0115,,2026-03-04,3,499,South,Pending,False,True,False,False,False,False,False,False,missing customer id; ,True,Rejected
+ORD0116,C100,,7,799,North,Pending,False,False,True,False,False,False,False,False,invalid order date; ,True,Rejected
+ORD0118,C121,2026-03-26,2,999,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0119,C111,2026-03-14,6,199,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0122,C105,2026-03-17,5,999,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0123,C124,2026-02-15,7,,South,Cancelled,False,False,False,False,True,False,False,False,invalid unit price; ,True,Rejected
+ORD0124,C110,2026-01-27,,499,West,Pending,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0126,C110,2026-01-16,4,499,,Cancelled,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0129,C122,2026-02-21,8,-250,,Completed,False,False,False,False,True,True,False,False,invalid unit price; missing sales region; ,True,Rejected
+ORD0134,C110,2026-01-24,3,249,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0135,C115,2026-02-24,5,199,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0136,C109,2026-01-12,3,499,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0138,,2026-01-21,8,199,,Completed,False,True,False,False,False,True,False,False,missing customer id; missing sales region; ,True,Rejected
+ORD0140,C101,2026-02-28,8,199,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0142,C109,2026-01-08,2,999,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0145,C101,,2,249,North,Pending,False,False,True,False,False,False,False,False,invalid order date; ,True,Rejected
+ORD0148,C115,2026-02-02,0,499,North,Cancelled,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0149,C122,2026-02-03,4,499,,,False,False,False,False,False,True,True,False,missing sales region; missing payment status; ,True,Rejected
+ORD0155,C119,2026-02-01,,249,North,Pending,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0159,C113,2026-02-11,2,249,East,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0161,,2026-02-09,6,199,,Completed,False,True,False,False,False,True,False,False,missing customer id; missing sales region; ,True,Rejected
+ORD0164,C106,2026-02-18,3,,West,,False,False,False,False,True,False,True,False,invalid unit price; missing payment status; ,True,Rejected
+ORD0170,C123,2026-01-28,2,499,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0172,C118,2026-03-22,8,-250,West,Pending,False,False,False,False,True,False,False,False,invalid unit price; ,True,Rejected
+ORD0174,C122,,7,249,,Completed,False,False,True,False,False,True,False,False,invalid order date; missing sales region; ,True,Rejected
+ORD0175,C101,2026-02-24,8,1499,,Completed,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0178,C114,2026-01-24,3,799,,,False,False,False,False,False,True,True,False,missing sales region; missing payment status; ,True,Rejected
+ORD0179,C104,2026-01-16,5,499,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0180,C112,2026-03-03,6,1499,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0183,C113,2026-01-25,2,799,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0184,,2026-01-02,6,199,East,Cancelled,False,True,False,False,False,False,False,False,missing customer id; ,True,Rejected
+ORD0185,C111,2026-02-05,0,999,West,Pending,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0186,C121,2026-01-06,,199,South,Completed,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0193,C121,2026-02-09,1,999,,,False,False,False,False,False,True,True,False,missing sales region; missing payment status; ,True,Rejected
+ORD0194,C124,2026-03-02,8,499,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0195,C119,2026-02-08,4,999,East,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0196,C124,2026-03-25,3,1499,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0201,C125,2026-01-15,2,249,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0203,C125,,5,999,South,Completed,False,False,True,False,False,False,False,False,invalid order date; ,True,Rejected
+ORD0204,C111,2026-03-24,5,999,West,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0205,C111,2026-01-22,4,,South,Pending,False,False,False,False,True,False,False,False,invalid unit price; ,True,Rejected
+ORD0206,C117,2026-02-20,4,1499,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0207,,2026-03-10,7,199,North,Completed,False,True,False,False,False,False,False,False,missing customer id; ,True,Rejected
+ORD0209,C104,2026-02-15,6,1499,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0212,C106,2026-02-15,4,499,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0215,C120,2026-03-20,1,-250,,Cancelled,False,False,False,False,True,True,False,False,invalid unit price; missing sales region; ,True,Rejected
+ORD0216,C107,2026-01-26,4,199,,Pending,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0217,C106,2026-03-07,,499,,Pending,False,False,False,True,False,True,False,False,invalid quantity; missing sales region; ,True,Rejected
+ORD0221,C101,2026-01-24,7,999,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0222,C102,2026-02-15,0,999,South,Completed,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0223,C114,2026-03-08,1,1499,,,False,False,False,False,False,True,True,False,missing sales region; missing payment status; ,True,Rejected
+ORD0228,C109,2026-02-17,7,199,,,False,False,False,False,False,True,True,False,missing sales region; missing payment status; ,True,Rejected
+ORD0230,,2026-02-27,8,799,West,,False,True,False,False,False,False,True,False,missing customer id; missing payment status; ,True,Rejected
+ORD0232,C104,,2,199,,Completed,False,False,True,False,False,True,False,False,invalid order date; missing sales region; ,True,Rejected
+ORD0239,C117,2026-03-20,1,999,North,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0240,C108,2026-01-06,5,1499,,Cancelled,False,False,False,False,False,True,False,False,missing sales region; ,True,Rejected
+ORD0241,C110,2026-02-01,3,249,South,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0245,C124,2026-03-02,2,499,West,,False,False,False,False,False,False,True,False,missing payment status; ,True,Rejected
+ORD0246,C113,2026-02-20,8,,East,Pending,False,False,False,False,True,False,False,False,invalid unit price; ,True,Rejected
+ORD0248,C121,2026-03-19,,999,North,Cancelled,False,False,False,True,False,False,False,False,invalid quantity; ,True,Rejected
+ORD0006,C108,2026-01-07,6,199,South,Completed,False,False,False,False,False,False,False,True,exact duplicate; ,True,Rejected
+ORD0020,C107,2026-01-17,8,199,,Completed,False,False,False,False,False,True,False,True,missing sales region; exact duplicate; ,True,Rejected
