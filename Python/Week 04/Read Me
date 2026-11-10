@@ -1,0 +1,11 @@
+AI-Powered Data Quality & Cleaning Engine
+Beginner-friendly Pandas ETL and Gemini integration.
+Outputs
+`output/cleaned_data.csv`
+`output/rejected_data.csv`
+`output/quality_report.json`
+Run
+1.Open `notebook/data_quality_engine.ipynb` in Jupyter.
+2.Run cells from top to bottom.
+3. Install `google-genai`, create a key in Google AI Studio, and set `GEMINI_API_KEY` as an environment variable before launching/restarting Jupyter.
+Pandas owns validation decisions. Gemini receives aggregate metrics provides advisory interpretation. Raw input is never overwritten; rejected records are preserved.
